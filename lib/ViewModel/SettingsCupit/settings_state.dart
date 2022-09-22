@@ -6,3 +6,6 @@ abstract class SettingsState {}
 class SettingsInitial extends SettingsState {}
 
 class LogOutState extends SettingsState {}
+
+class TermsSuccessState extends SettingsState {}
+class TermsErrorState extends SettingsState {}

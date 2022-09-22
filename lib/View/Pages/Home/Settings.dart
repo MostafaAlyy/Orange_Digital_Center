@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:orangeflutertraing/View/Components/settingCompo/SettingRow.dart';
 import 'package:orangeflutertraing/View/Pages/Auth/Login_Scr.dart';
+import 'package:orangeflutertraing/View/Pages/TermsScr.dart';
 import 'package:orangeflutertraing/View/Pages/supportScr.dart';
 import 'package:orangeflutertraing/ViewModel/SettingsCupit/settings_cubit.dart';
 
@@ -37,7 +38,7 @@ class SettingScr extends StatelessWidget {
                 ),
                 SettingRow(
                     label: "Terms & Conditions",
-                    screen: SupportScr(),
+                    screen: TermsScr(),
                     context: context),
                 SizedBox(
                   height: 16,
