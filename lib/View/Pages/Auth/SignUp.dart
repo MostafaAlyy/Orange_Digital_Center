@@ -6,6 +6,8 @@ import 'package:orangeflutertraing/View/Pages/Auth/Login_Scr.dart';
 import 'package:orangeflutertraing/ViewModel/AuthCupit/states.dart';
 import 'package:orangeflutertraing/ViewModel/AuthCupit/AuthCupit.dart';
 import 'package:orangeflutertraing/Core/Resorses/ColorsManger.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../Components/AuthCompo/textFormField.dart';
 import '../HomeScr.dart';
@@ -22,23 +24,20 @@ class SignUpScr extends StatelessWidget {
             MaterialPageRoute(builder: (context) => LoginScr()),
             (Route<dynamic> route) => false,
           );
-          Fluttertoast.showToast(
-              msg: "${state.message}",
-              toastLength: Toast.LENGTH_LONG,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 5,
-              backgroundColor: Colors.green,
-              textColor: Colors.white,
-              fontSize: 16.0);
+
+          showTopSnackBar(
+            context,
+            CustomSnackBar.success(
+              message: "${state.message}",
+            ),
+          );
         } else if (state is ODCIRegsterEroreState) {
-          Fluttertoast.showToast(
-              msg: "${state.message}",
-              toastLength: Toast.LENGTH_LONG,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 5,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
+          showTopSnackBar(
+            context,
+            CustomSnackBar.error(
+              message: '${state.message}',
+            ),
+          );
         }
       },
       builder: (context, state) {
